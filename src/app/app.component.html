@@ -1,30 +1,36 @@
 <mat-toolbar color="primary">
     <mat-icon>local_fire_department</mat-icon>
     <span>IT Sports</span>
+    <span class="spacer"></span>
+    <button mat-button [matMenuTriggerFor]="menu">{{ selectedLanguage }}</button>
+    <mat-menu #menu="matMenu">
+        <button *ngFor="let language of languages" (click)="changeLanguage(language)" mat-menu-item>{{ language
+            }}</button>
+    </mat-menu>
 </mat-toolbar>
 
 <mat-card class="card">
-    <mat-card-title>Welcome to IT Sports</mat-card-title>
+    <mat-card-title>{{ 'welcome.header' | i18nextEager  }}</mat-card-title>
     <mat-card-content>
-        We offer different activities for Software Engineers.
+        {{ 'welcome.explanation' | i18nextEager }}
     </mat-card-content>
 </mat-card>
 
 
 <mat-card class="card">
-    <mat-card-title>Yoga</mat-card-title>
-    <mat-card-subtitle>Maximum number of people: 15</mat-card-subtitle>
+    <mat-card-title>{{'courseNames.yoga' | i18nextEager }}</mat-card-title>
+    <mat-card-subtitle>{{'courses.maxAttendees' | i18nextEager }} 15</mat-card-subtitle>
     <mat-card-content>
-        <p>Start Time: {{'2021-11-01 14:00' | date: 'short' }} </p>
-        <p>End Time: {{'2021-11-01 15:00' | date: 'short' }}</p>
+        <p>{{'courses.startTime' | i18nextEager }} {{'2021-11-01 14:00' | date: 'short': '': selectedLanguage }} </p>
+        <p>{{'courses.endTime' | i18nextEager }} {{'2021-11-01 15:00' | date: 'short': '': selectedLanguage }}</p>
     </mat-card-content>
 </mat-card>
 
 <mat-card class="card">
-    <mat-card-title>Karate</mat-card-title>
-    <mat-card-subtitle>Maximum number of people: 6</mat-card-subtitle>
+    <mat-card-title>{{'courseNames.karate' | i18nextEager }}</mat-card-title>
+    <mat-card-subtitle>{{'courses.maxAttendees' | i18nextEager }} 6</mat-card-subtitle>
     <mat-card-content>
-        <p>Start Time: {{'2021-11-02 19:00' | date: 'short' }} </p>
-        <p>End Time: {{'2021-11-02 20:30' | date: 'short' }}</p>
+        <p>{{'courses.startTime' | i18nextEager }} {{'2021-11-02 19:00' | date: 'short': '': selectedLanguage }} </p>
+        <p>{{'courses.endTime' | i18nextEager }} {{'2021-11-02 20:30' | date: 'short': '': selectedLanguage }}</p>
     </mat-card-content>
 </mat-card>

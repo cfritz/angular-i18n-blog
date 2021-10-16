@@ -1,0 +1,15 @@
+{
+  "welcome": {
+    "header": "Добре дошли в IT Sports",
+    "explanation": "Ние предлагаме различни спортни активности за софтуерни инженери."
+  },
+  "courses": {
+    "maxAttendees": "Максимален брой хора:",
+    "startTime": "Начало:",
+    "endTime": "Край:"
+  },
+  "courseNames": {
+    "yoga": "Йога",
+    "karate": "Карате"
+  }
+}
